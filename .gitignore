@@ -1,2 +1,2 @@
-./keycloak-postgres.env
-./.idea
+keycloak-postgres.env
+.idea/

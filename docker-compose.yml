@@ -6,8 +6,6 @@ services:
       - ./keycloak-postgres.env
     container_name: keycloak-db
     restart: unless-stopped
-    ports:
-      - '5432:5432'
     volumes:
       - ./keycloak-db:/var/lib/postgresql/data
     networks:
@@ -25,8 +23,6 @@ services:
       - "traefik.http.routers.keycloak.rule=Host(`michael.jakobrathberger.eu`)"
       - "traefik.http.routers.keycloak.tls=true"
       - "traefik.http.routers.keycloak.tls.certresolver=production"
-    ports:
-      - "8080:8080"
     networks:
       - keycloak-network
     depends_on:
